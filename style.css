@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: "Arial", Helvetica, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #43e97b, #38f9d7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    background-color: rgba(225, 225, 225, 0.6);
+    width: 768px;
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.box h4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.box .date_picker {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.box .date_picker input {
+    padding: 0.5rem;
+    margin: 0 10px;
+    border-radius: 8px;
+    border: 0;
+    transition: 0.3s ease;
+}
+
+.box .date_picker input:focus {
+    outline: none;
+    box-shadow: 0 0 10px gray;
+}
+
+.date_picker span {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.box .date_picker #Choose_Date {
+    margin-left: auto;
+}
+
+.box .age_cal {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 2s, opacity 3s, margin 0.25s ease;
+}
+
+.age_cal.expand {
+    margin-top: 20px;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.age_box {
+    position: relative;
+    border: 2px solid black;
+    background-color: #fff;
+    border-radius: 10px;
+    /* margin: 10px; */
+    width: 222px;
+    transition: 0.3s ease;
+}
+
+.age_cal .age_box p.header {
+    position: relative;
+    background-color: #3af7c9;
+    text-align: center;
+    padding: 10px 30px;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.age_cal .age_box :nth-child(even) p.header {
+    background-color: #40ef9b;
+}
+
+.age_cal .age_box p.value {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    /* font-weight: 50; */
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        display: block;
+        margin: 2rem 0;
+    }
+    .box {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .age_box {
+        width: 160px;
+        /* font-size: 0.5rem; */
+        /* margin: 15px; */
+    }
+    .age_cal .age_box p.header {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .age_cal .age_box p.value {
+        font-size: 1rem;
+        /* padding: 10px 20px; */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .box {
+        width: 300px;
+    }
+    .box .date_picker {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .box .date_picker input {
+        margin: 10px 0;
+        width: 100%;
+    }
+    .box .date_picker #Choose_Date {
+        margin-left: 0;
+    }
+    .age_box {
+        width: 120px;
+    }
+    .age_cal .age_box p.header {
+        font-size: 0.8rem;
+        padding: 10px 10px;
+    }
+    .age_cal .age_box p.value {
+        font-size: 0.8rem;
+        padding: 10px 5px;
+    }
+}
